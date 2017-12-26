@@ -7,7 +7,7 @@ namespace ImportadorArquivos
 {
     public partial class Main : Form
     {
-        string arquivoCA, arquivoRec;
+        string arquivoCA, arquivoRec, arquivoCetelem;
 
         public Main()
         {
@@ -16,7 +16,7 @@ namespace ImportadorArquivos
 
         private void btnImportarCA_Click(object sender, EventArgs e)
         {
-            if ((txbDirArquivoCA.Text == null) || (txbDirArquivoRec.Text == null))
+            if ((txbDirArquivoCA.Text == "") || (txbConn.Text == ""))
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -58,9 +58,34 @@ namespace ImportadorArquivos
             }
         }
 
+        private void btnProcurarCetelem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogCetelem.ShowDialog() == DialogResult.OK)
+            {
+                txbDirArquivoCetelem.Text = openFileDialogCetelem.FileName;
+                arquivoCetelem = openFileDialogCetelem.FileName;
+            }
+        }
+
+        private void btnImportarCetelem_Click(object sender, EventArgs e)
+        {
+            if ((txbDirArquivoCetelem.Text == "") || (txbConn.Text == ""))
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Action action = () => CetelemController.UploadCetelem(arquivoCetelem);
+                using (LoadingForm form = new LoadingForm(action))
+                {
+                    form.ShowDialog(this);
+                }
+            }
+        }
+
         private void btnImportarRec_Click(object sender, EventArgs e)
         {
-            if ((txbDirArquivoRec.Text == null) || (txbDirArquivoRec.Text == null))
+            if ((txbDirArquivoRec.Text == "") || (txbConn.Text == ""))
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

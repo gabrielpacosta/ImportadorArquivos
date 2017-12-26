@@ -46,15 +46,22 @@
             this.txbConn = new System.Windows.Forms.TextBox();
             this.btnProcurarConn = new System.Windows.Forms.Button();
             this.openFileDialogConn = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnImportarCetelem = new System.Windows.Forms.Button();
+            this.txbDirArquivoCetelem = new System.Windows.Forms.TextBox();
+            this.btnProcurarCetelem = new System.Windows.Forms.Button();
+            this.openFileDialogCetelem = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Location = new System.Drawing.Point(1, 72);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -213,6 +220,51 @@
             this.openFileDialogConn.FileName = "Arquivo de conexão";
             this.openFileDialogConn.Filter = "Arquivo de Texto |*.txt";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnImportarCetelem);
+            this.tabPage3.Controls.Add(this.txbDirArquivoCetelem);
+            this.tabPage3.Controls.Add(this.btnProcurarCetelem);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(289, 191);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Cetelem";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnImportarCetelem
+            // 
+            this.btnImportarCetelem.Location = new System.Drawing.Point(172, 162);
+            this.btnImportarCetelem.Name = "btnImportarCetelem";
+            this.btnImportarCetelem.Size = new System.Drawing.Size(75, 23);
+            this.btnImportarCetelem.TabIndex = 17;
+            this.btnImportarCetelem.Text = "Importar";
+            this.btnImportarCetelem.UseVisualStyleBackColor = true;
+            this.btnImportarCetelem.Click += new System.EventHandler(this.btnImportarCetelem_Click);
+            // 
+            // txbDirArquivoCetelem
+            // 
+            this.txbDirArquivoCetelem.Enabled = false;
+            this.txbDirArquivoCetelem.Location = new System.Drawing.Point(94, 84);
+            this.txbDirArquivoCetelem.Name = "txbDirArquivoCetelem";
+            this.txbDirArquivoCetelem.Size = new System.Drawing.Size(153, 20);
+            this.txbDirArquivoCetelem.TabIndex = 16;
+            // 
+            // btnProcurarCetelem
+            // 
+            this.btnProcurarCetelem.Location = new System.Drawing.Point(20, 83);
+            this.btnProcurarCetelem.Name = "btnProcurarCetelem";
+            this.btnProcurarCetelem.Size = new System.Drawing.Size(75, 22);
+            this.btnProcurarCetelem.TabIndex = 15;
+            this.btnProcurarCetelem.Text = "Procurar";
+            this.btnProcurarCetelem.UseVisualStyleBackColor = true;
+            this.btnProcurarCetelem.Click += new System.EventHandler(this.btnProcurarCetelem_Click);
+            // 
+            // openFileDialogCetelem
+            // 
+            this.openFileDialogCetelem.FileName = "Arquivo Cetelem";
+            this.openFileDialogCetelem.Filter = "Arquivo de Texto |*.txt";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +284,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,6 +311,11 @@
         private System.Windows.Forms.TextBox txbConn;
         private System.Windows.Forms.Button btnProcurarConn;
         private System.Windows.Forms.OpenFileDialog openFileDialogConn;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnImportarCetelem;
+        private System.Windows.Forms.TextBox txbDirArquivoCetelem;
+        private System.Windows.Forms.Button btnProcurarCetelem;
+        private System.Windows.Forms.OpenFileDialog openFileDialogCetelem;
     }
 }
 

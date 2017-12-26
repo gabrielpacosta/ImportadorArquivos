@@ -71,7 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CetelemController.cs" />
     <Compile Include="Controller\RecAssController.cs" />
+    <Compile Include="DB\CetelemDB.cs" />
     <Compile Include="DB\RecAssDB.cs" />
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +90,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CetelemContrato.cs" />
+    <Compile Include="Model\CetelemParcela.cs" />
     <Compile Include="Model\RecAss.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
