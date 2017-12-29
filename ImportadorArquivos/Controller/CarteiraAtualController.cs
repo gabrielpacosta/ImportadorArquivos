@@ -38,8 +38,14 @@ namespace ImportadorArquivos.Controller
             DateTime start = DateTime.Now;
             DateTime end;
 
-
-            CarteiraAtualDB.Insert(AllLines, file);
+            if (!CarteiraAtualDB.VerificaDataExiste())
+                CarteiraAtualDB.Insert(AllLines, file);
+            else
+            {
+                MessageBox.Show("Já existe um arquivo na data especificada.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SuccessForm.linhasProcessadas = "Nenhuma";
+                return;
+            }
 
             end = DateTime.Now;
             Console.WriteLine("Finished at: " + end.ToLongTimeString());

@@ -124,26 +124,27 @@ namespace ImportadorArquivos.DB
                             break;
 
                         Rows.Add(string.Format("({0},{1}, {2},{3}, {4},{5}, {6},{7}, {8},{9}, {10},{11}, {12},{13}, {14})",
-                        MySqlHelper.EscapeString(CheckDateNull(contratosInsert[j].data_arquivo)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].contrato)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].processo)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].nome_loja)),
-                        MySqlHelper.EscapeString(CheckDateNull(contratosInsert[j].data_contrato)),
-                        MySqlHelper.EscapeString(contratosInsert[j].valor_financiado.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(contratosInsert[j].valor_prestacao.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].uf)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].telefone)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].nome_empresa)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].telefone_com)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].telefone1_res)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].telefone2_res)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].celular)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j].email))));
+                        MySqlHelper.EscapeString(CheckDateNull(contratosInsert[j+i].data_arquivo)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].contrato)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].processo)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].nome_loja)),
+                        MySqlHelper.EscapeString(CheckDateNull(contratosInsert[j+i].data_contrato)),
+                        MySqlHelper.EscapeString(contratosInsert[j+i].valor_financiado.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(contratosInsert[j+i].valor_prestacao.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].uf)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].telefone)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].nome_empresa)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].telefone_com)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].telefone1_res)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].telefone2_res)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].celular)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosInsert[j+i].email))));
 
                     }
 
                     query.Append(string.Join(','.ToString(), Rows));
                     query.Replace(@"\", string.Empty);
+                    query.Append(" ON DUPLICATE KEY UPDATE id=id");
 
                     try
                     {
@@ -183,21 +184,21 @@ namespace ImportadorArquivos.DB
 
 
                         Rows.Add(string.Format("UPDATE `itsp`.`cetelem_contrato` SET `data_arquivo`= {0}, `contrato` = {1}, `processo` = {2}, `nome_loja` = {3}, `data_contrato` =  {4}, `valor_financiado` = {5}, `valor_prestacao` = {6}, `uf` = {7}, `telefone` =  {8}, `nome_empresa` = {9}, `telefone_com` =  {10}, `telefone1_res` = {11}, `telefone2_res` =  {12}, `celular` = {13}, `email` =  {14} WHERE `contrato` = {1}; ",
-                        MySqlHelper.EscapeString(CheckDateNull(contratosUpdate[j].data_arquivo)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].contrato)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].processo)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].nome_loja)),
-                        MySqlHelper.EscapeString(CheckDateNull(contratosUpdate[j].data_contrato)),
-                        MySqlHelper.EscapeString(contratosUpdate[j].valor_financiado.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(contratosUpdate[j].valor_prestacao.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].uf)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].telefone)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].nome_empresa)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].telefone_com)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].telefone1_res)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].telefone2_res)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].celular)),
-                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j].email))));
+                        MySqlHelper.EscapeString(CheckDateNull(contratosUpdate[j+i].data_arquivo)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].contrato)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].processo)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].nome_loja)),
+                        MySqlHelper.EscapeString(CheckDateNull(contratosUpdate[j+i].data_contrato)),
+                        MySqlHelper.EscapeString(contratosUpdate[j+i].valor_financiado.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(contratosUpdate[j+i].valor_prestacao.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].uf)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].telefone)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].nome_empresa)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].telefone_com)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].telefone1_res)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].telefone2_res)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].celular)),
+                        MySqlHelper.EscapeString(CheckStrNull(contratosUpdate[j+i].email))));
 
                     }
 
@@ -256,16 +257,16 @@ namespace ImportadorArquivos.DB
                             break;
 
                         Rows.Add(string.Format("({0},{1}, {2},{3}, {4},{5}, {6},{7}, {8}, {9})",
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j].data_arquivo)),
-                        MySqlHelper.EscapeString(CheckStrNull(parcelasInsert[j].contrato)),
-                        MySqlHelper.EscapeString(parcelasInsert[j].valor_original.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j].data_vencimento)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j].data_pagamento)),
-                        MySqlHelper.EscapeString(parcelasInsert[j].valor_pagamento.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckStrNull(parcelasInsert[j].processo)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j].data_ultimo_vencimento)),
-                        MySqlHelper.EscapeString(parcelasInsert[j].valor_principal.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(parcelasInsert[j].codigo_parcela.ToString())));
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j+i].data_arquivo)),
+                        MySqlHelper.EscapeString(CheckStrNull(parcelasInsert[j+i].contrato)),
+                        MySqlHelper.EscapeString(parcelasInsert[j+i].valor_original.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j+i].data_vencimento)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j+i].data_pagamento)),
+                        MySqlHelper.EscapeString(parcelasInsert[j+i].valor_pagamento.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckStrNull(parcelasInsert[j+i].processo)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasInsert[j+i].data_ultimo_vencimento)),
+                        MySqlHelper.EscapeString(parcelasInsert[j+i].valor_principal.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(parcelasInsert[j+i].codigo_parcela.ToString())));
 
                     }
 
@@ -311,16 +312,16 @@ namespace ImportadorArquivos.DB
 
 
                         Rows.Add(string.Format("UPDATE `itsp`.`cetelem_parcela` SET `data_arquivo`= {0}, `contrato` = {1}, `valor_original` = {2}, `data_vencimento` = {3}, `data_pagamento` =  {4}, `valor_pagamento` = {5}, `processo` = {6}, `data_ultimo_vencimento` = {7}, `valor_principal` =  {8}, `codigo_parcela` = {9} WHERE `contrato` = {1} AND `codigo_parcela` = {9} ",
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j].data_arquivo)),
-                        MySqlHelper.EscapeString(CheckStrNull(parcelasUpdate[j].contrato)),
-                        MySqlHelper.EscapeString(parcelasUpdate[j].valor_original.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j].data_vencimento)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j].data_pagamento)),
-                        MySqlHelper.EscapeString(parcelasUpdate[j].valor_pagamento.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(CheckStrNull(parcelasUpdate[j].processo)),
-                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j].data_ultimo_vencimento)),
-                        MySqlHelper.EscapeString(parcelasUpdate[j].valor_principal.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(parcelasUpdate[j].codigo_parcela.ToString())));
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j+i].data_arquivo)),
+                        MySqlHelper.EscapeString(CheckStrNull(parcelasUpdate[j+i].contrato)),
+                        MySqlHelper.EscapeString(parcelasUpdate[j+i].valor_original.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j+i].data_vencimento)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j+i].data_pagamento)),
+                        MySqlHelper.EscapeString(parcelasUpdate[j+i].valor_pagamento.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(CheckStrNull(parcelasUpdate[j+i].processo)),
+                        MySqlHelper.EscapeString(CheckDateNull(parcelasUpdate[j+i].data_ultimo_vencimento)),
+                        MySqlHelper.EscapeString(parcelasUpdate[j+i].valor_principal.ToString("F", CultureInfo.InvariantCulture)),
+                        MySqlHelper.EscapeString(parcelasUpdate[j+i].codigo_parcela.ToString())));
 
         }
 

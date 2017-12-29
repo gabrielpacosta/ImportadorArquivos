@@ -16,7 +16,7 @@ namespace ImportadorArquivos
 
         private void btnImportarCA_Click(object sender, EventArgs e)
         {
-            if ((txbDirArquivoCA.Text == "") || (txbConn.Text == ""))
+            if (txbDirArquivoCA.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -49,15 +49,6 @@ namespace ImportadorArquivos
             }
         }
 
-        private void btnProcurarConn_Click(object sender, EventArgs e)
-        {
-            if (openFileDialogConn.ShowDialog() == DialogResult.OK)
-            {
-                txbConn.Text = openFileDialogConn.FileName;
-                _Global.ConnectionString = System.IO.File.ReadAllLines(txbConn.Text)[0];
-            }
-        }
-
         private void btnProcurarCetelem_Click(object sender, EventArgs e)
         {
             if (openFileDialogCetelem.ShowDialog() == DialogResult.OK)
@@ -69,7 +60,7 @@ namespace ImportadorArquivos
 
         private void btnImportarCetelem_Click(object sender, EventArgs e)
         {
-            if ((txbDirArquivoCetelem.Text == "") || (txbConn.Text == ""))
+            if (txbDirArquivoCetelem.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,7 +76,7 @@ namespace ImportadorArquivos
 
         private void btnImportarRec_Click(object sender, EventArgs e)
         {
-            if ((txbDirArquivoRec.Text == "") || (txbConn.Text == ""))
+            if (txbDirArquivoRec.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

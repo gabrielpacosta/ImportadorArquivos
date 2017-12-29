@@ -39,17 +39,14 @@
             this.btnProcurarCA = new System.Windows.Forms.Button();
             this.dateTimePickerCA = new System.Windows.Forms.DateTimePicker();
             this.lblDataCA = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.openFileDialogCA = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialogRec = new System.Windows.Forms.OpenFileDialog();
-            this.lblConn = new System.Windows.Forms.Label();
-            this.txbConn = new System.Windows.Forms.TextBox();
-            this.btnProcurarConn = new System.Windows.Forms.Button();
-            this.openFileDialogConn = new System.Windows.Forms.OpenFileDialog();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnImportarCetelem = new System.Windows.Forms.Button();
             this.txbDirArquivoCetelem = new System.Windows.Forms.TextBox();
             this.btnProcurarCetelem = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.openFileDialogCA = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogRec = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogConn = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogCetelem = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,7 +59,7 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(1, 72);
+            this.tabControl.Location = new System.Drawing.Point(-2, 39);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(297, 217);
@@ -169,57 +166,6 @@
             this.lblDataCA.TabIndex = 7;
             this.lblDataCA.Text = "Data do arquivo:";
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(2, 56);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(250, 13);
-            this.lblTitulo.TabIndex = 8;
-            this.lblTitulo.Text = "Selecione a aba referente ao arquivo a ser inserido:";
-            // 
-            // openFileDialogCA
-            // 
-            this.openFileDialogCA.FileName = "Arquivo carteira atual";
-            this.openFileDialogCA.Filter = "Arquivo de Texto |*.txt";
-            // 
-            // openFileDialogRec
-            // 
-            this.openFileDialogRec.FileName = "Arquivo carteira atual";
-            this.openFileDialogRec.Filter = "Arquivo de Texto |*.txt";
-            // 
-            // lblConn
-            // 
-            this.lblConn.AutoSize = true;
-            this.lblConn.Location = new System.Drawing.Point(2, 20);
-            this.lblConn.Name = "lblConn";
-            this.lblConn.Size = new System.Drawing.Size(105, 13);
-            this.lblConn.TabIndex = 9;
-            this.lblConn.Text = "Arquivo de conexão:";
-            // 
-            // txbConn
-            // 
-            this.txbConn.Enabled = false;
-            this.txbConn.Location = new System.Drawing.Point(187, 16);
-            this.txbConn.Name = "txbConn";
-            this.txbConn.Size = new System.Drawing.Size(107, 20);
-            this.txbConn.TabIndex = 15;
-            // 
-            // btnProcurarConn
-            // 
-            this.btnProcurarConn.Location = new System.Drawing.Point(113, 15);
-            this.btnProcurarConn.Name = "btnProcurarConn";
-            this.btnProcurarConn.Size = new System.Drawing.Size(75, 22);
-            this.btnProcurarConn.TabIndex = 14;
-            this.btnProcurarConn.Text = "Procurar";
-            this.btnProcurarConn.UseVisualStyleBackColor = true;
-            this.btnProcurarConn.Click += new System.EventHandler(this.btnProcurarConn_Click);
-            // 
-            // openFileDialogConn
-            // 
-            this.openFileDialogConn.FileName = "Arquivo de conexão";
-            this.openFileDialogConn.Filter = "Arquivo de Texto |*.txt";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnImportarCetelem);
@@ -260,6 +206,30 @@
             this.btnProcurarCetelem.UseVisualStyleBackColor = true;
             this.btnProcurarCetelem.Click += new System.EventHandler(this.btnProcurarCetelem_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(-1, 23);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(250, 13);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Selecione a aba referente ao arquivo a ser inserido:";
+            // 
+            // openFileDialogCA
+            // 
+            this.openFileDialogCA.FileName = "Arquivo carteira atual";
+            this.openFileDialogCA.Filter = "Arquivo de Texto |*.txt";
+            // 
+            // openFileDialogRec
+            // 
+            this.openFileDialogRec.FileName = "Arquivo carteira atual";
+            this.openFileDialogRec.Filter = "Arquivo de Texto |*.txt";
+            // 
+            // openFileDialogConn
+            // 
+            this.openFileDialogConn.FileName = "Arquivo de conexão";
+            this.openFileDialogConn.Filter = "Arquivo de Texto |*.txt";
+            // 
             // openFileDialogCetelem
             // 
             this.openFileDialogCetelem.FileName = "Arquivo Cetelem";
@@ -270,10 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(299, 291);
-            this.Controls.Add(this.txbConn);
-            this.Controls.Add(this.btnProcurarConn);
-            this.Controls.Add(this.lblConn);
+            this.ClientSize = new System.Drawing.Size(299, 256);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -307,9 +274,6 @@
         private System.Windows.Forms.TextBox txbDirArquivoRec;
         private System.Windows.Forms.Button btnProcurarRec;
         private System.Windows.Forms.OpenFileDialog openFileDialogRec;
-        private System.Windows.Forms.Label lblConn;
-        private System.Windows.Forms.TextBox txbConn;
-        private System.Windows.Forms.Button btnProcurarConn;
         private System.Windows.Forms.OpenFileDialog openFileDialogConn;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnImportarCetelem;

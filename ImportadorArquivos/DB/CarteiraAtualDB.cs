@@ -179,6 +179,39 @@ namespace ImportadorArquivos.DB
             return carteira_atual;
         }
 
+        public static bool VerificaDataExiste()
+        {
+            int count = 0;
+            using (MySqlConnection mConnection = new MySqlConnection(_Global.ConnectionString))
+            {
+                StringBuilder query = new StringBuilder(string.Format("SELECT count(0) FROM itsp.carteira_atual WHERE `Data_Arquivo` = {0}",
+                    (CheckDateNull(CarteiraAtual.Data_Arquivo))));
+                try
+                {
+                    mConnection.Open();
+                    using (MySqlCommand myCmd = new MySqlCommand(query.ToString(), mConnection))
+                    {
+                        count = int.Parse(myCmd.ExecuteScalar().ToString());
+                        
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"**********ERRO: " + ex.Message);
+                    //Console.WriteLine($"**********ERRO: " + query.ToString());
+                }
+                finally
+                {
+                    mConnection.Close();
+                }
+            }
+
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
         private static string CheckStrNull(string s)
         {
             return string.IsNullOrEmpty(s) ? "null" : @"'" + s+ @"'";

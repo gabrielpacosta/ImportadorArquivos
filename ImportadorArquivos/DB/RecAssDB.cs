@@ -24,7 +24,7 @@ namespace ImportadorArquivos.DB
                     " `indicador`, `assessoria`, `debito_nao_ajuizavel`, `qtde_parcela_do_acordo`," +
                     " `qtde_de_parcelas_em_aberto`, `parcela_do_acordo`, `cod_entidade`," +
                     " `valor_principal`, `desconto_aplicado`, `atraso`, `nivel_negociacao`," +
-                    " `divida_atualizada`, `linhaArquivo`, `nomeArquivo`)" +
+                    " `divida_atualizada`, `nomeArquivo`)" +
                     " VALUES ");
 
                 using (MySqlConnection mConnection = new MySqlConnection(_Global.ConnectionString))
@@ -41,7 +41,7 @@ namespace ImportadorArquivos.DB
                         rec_ass.linhaArquivo = i + j;
                         rec_ass.nomeArquivo = fileName;
 
-                        Rows.Add(string.Format("({0},{1}, {2},{3}, {4},{5}, {6},{7}, {8},{9}, {10},{11}, {12},{13}, {14},{15}, {16},{17}, {18},{19}, {20},{21}, {22},{23}, {24},{25}, {26},{27}, {28},{29}, {30},{31}, {32},{33}, {34},{35}, {36},{37}, {38}, {39}, {40})",
+                        Rows.Add(string.Format("({0},{1}, {2},{3}, {4},{5}, {6},{7}, {8},{9}, {10},{11}, {12},{13}, {14},{15}, {16},{17}, {18},{19}, {20},{21}, {22},{23}, {24},{25}, {26},{27}, {28},{29}, {30},{31}, {32},{33}, {34},{35}, {36},{37}, {38}, {39})",
                         MySqlHelper.EscapeString(CheckStrNull(rec_ass.tipo_pagamento_ge)),
                         MySqlHelper.EscapeString(CheckStrNull(rec_ass.tipo_pagamento)),
                         MySqlHelper.EscapeString(CheckDateNull(rec_ass.processamento)),
@@ -81,7 +81,6 @@ namespace ImportadorArquivos.DB
                         MySqlHelper.EscapeString(rec_ass.atraso.ToString("F", CultureInfo.InvariantCulture)),
                         MySqlHelper.EscapeString(rec_ass.nivel_negociacao.ToString("F", CultureInfo.InvariantCulture)),
                         MySqlHelper.EscapeString(rec_ass.divida_atualizada.ToString("F", CultureInfo.InvariantCulture)),
-                        MySqlHelper.EscapeString(rec_ass.linhaArquivo.ToString("F0", CultureInfo.InvariantCulture)),
                         MySqlHelper.EscapeString(CheckStrNull(rec_ass.nomeArquivo))));
 
                     }
@@ -100,7 +99,7 @@ namespace ImportadorArquivos.DB
                     }
                     catch (MySqlException ex)
                     {
-                        Console.WriteLine($"**********ERRO: " + ex);
+                        Console.WriteLine($"**********ERRO: " + ex.Message);
                         //Console.WriteLine($"**********ERRO: " + query.ToString());
                     }
                     finally
