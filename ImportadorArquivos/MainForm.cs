@@ -7,7 +7,7 @@ namespace ImportadorArquivos
 {
     public partial class Main : Form
     {
-        string arquivoCA, arquivoRec, arquivoCetelem;
+        string arquivoCA, arquivoRec, arquivoCetelem, arquivoRejMis;
 
         public Main()
         {
@@ -55,6 +55,31 @@ namespace ImportadorArquivos
             {
                 txbDirArquivoCetelem.Text = openFileDialogCetelem.FileName;
                 arquivoCetelem = openFileDialogCetelem.FileName;
+            }
+        }
+
+        private void btImportarRejMis_Click(object sender, EventArgs e)
+        {
+            if (tbRejMis.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Action action = () => RejMisController.Upload(arquivoRejMis);
+                using (LoadingForm form = new LoadingForm(action))
+                {
+                    form.ShowDialog(this);
+                }
+            }
+        }
+
+        private void btProcurarRejMis_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogRejMis.ShowDialog() == DialogResult.OK)
+            {
+                tbRejMis.Text = openFileDialogRejMis.FileName;
+                arquivoRejMis = openFileDialogRejMis.FileName;
             }
         }
 

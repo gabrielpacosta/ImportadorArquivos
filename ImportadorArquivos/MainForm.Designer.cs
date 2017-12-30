@@ -48,10 +48,16 @@
             this.openFileDialogRec = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogConn = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogCetelem = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btImportarRejMis = new System.Windows.Forms.Button();
+            this.tbRejMis = new System.Windows.Forms.TextBox();
+            this.btProcurarRejMis = new System.Windows.Forms.Button();
+            this.openFileDialogRejMis = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -59,10 +65,12 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(-2, 39);
+            this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl.Location = new System.Drawing.Point(0, 37);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(297, 217);
+            this.tabControl.Size = new System.Drawing.Size(507, 339);
             this.tabControl.TabIndex = 7;
             // 
             // tabPage1
@@ -73,7 +81,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(289, 191);
+            this.tabPage1.Size = new System.Drawing.Size(499, 313);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rec_ass";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -116,7 +124,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(289, 191);
+            this.tabPage2.Size = new System.Drawing.Size(496, 313);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Carteira Atual";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -173,7 +181,7 @@
             this.tabPage3.Controls.Add(this.btnProcurarCetelem);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(289, 191);
+            this.tabPage3.Size = new System.Drawing.Size(496, 313);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cetelem";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -209,7 +217,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(-1, 23);
+            this.lblTitulo.Location = new System.Drawing.Point(-3, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(250, 13);
             this.lblTitulo.TabIndex = 8;
@@ -235,12 +243,58 @@
             this.openFileDialogCetelem.FileName = "Arquivo Cetelem";
             this.openFileDialogCetelem.Filter = "Arquivo de Texto |*.txt";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btImportarRejMis);
+            this.tabPage4.Controls.Add(this.tbRejMis);
+            this.tabPage4.Controls.Add(this.btProcurarRejMis);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(499, 313);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Itaú - rej_mis";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btImportarRejMis
+            // 
+            this.btImportarRejMis.Location = new System.Drawing.Point(168, 61);
+            this.btImportarRejMis.Name = "btImportarRejMis";
+            this.btImportarRejMis.Size = new System.Drawing.Size(75, 23);
+            this.btImportarRejMis.TabIndex = 17;
+            this.btImportarRejMis.Text = "Importar";
+            this.btImportarRejMis.UseVisualStyleBackColor = true;
+            this.btImportarRejMis.Click += new System.EventHandler(this.btImportarRejMis_Click);
+            // 
+            // tbRejMis
+            // 
+            this.tbRejMis.Enabled = false;
+            this.tbRejMis.Location = new System.Drawing.Point(90, 26);
+            this.tbRejMis.Name = "tbRejMis";
+            this.tbRejMis.Size = new System.Drawing.Size(153, 20);
+            this.tbRejMis.TabIndex = 16;
+            // 
+            // btProcurarRejMis
+            // 
+            this.btProcurarRejMis.Location = new System.Drawing.Point(9, 24);
+            this.btProcurarRejMis.Name = "btProcurarRejMis";
+            this.btProcurarRejMis.Size = new System.Drawing.Size(75, 22);
+            this.btProcurarRejMis.TabIndex = 15;
+            this.btProcurarRejMis.Text = "Procurar";
+            this.btProcurarRejMis.UseVisualStyleBackColor = true;
+            this.btProcurarRejMis.Click += new System.EventHandler(this.btProcurarRejMis_Click);
+            // 
+            // openFileDialogRejMis
+            // 
+            this.openFileDialogRejMis.FileName = "Arquivo carteira atual";
+            this.openFileDialogRejMis.Filter = "Arquivo de Texto |*.txt";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(299, 256);
+            this.ClientSize = new System.Drawing.Size(507, 376);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -253,6 +307,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +336,11 @@
         private System.Windows.Forms.TextBox txbDirArquivoCetelem;
         private System.Windows.Forms.Button btnProcurarCetelem;
         private System.Windows.Forms.OpenFileDialog openFileDialogCetelem;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btImportarRejMis;
+        private System.Windows.Forms.TextBox tbRejMis;
+        private System.Windows.Forms.Button btProcurarRejMis;
+        private System.Windows.Forms.OpenFileDialog openFileDialogRejMis;
     }
 }
 
