@@ -58,8 +58,8 @@ namespace ImportadorArquivos.DB
             cet_contrato.processo = linha1.Substring(18, 2);
             cet_contrato.nome_loja = linha1.Substring(30, 40);
             cet_contrato.data_contrato = linha1.Substring(162, 8) == "00000000" ? DateTime.MinValue : DateTime.ParseExact(linha1.Substring(162, 8), "ddMMyyyy", CultureInfo.InvariantCulture);
-            cet_contrato.valor_financiado = Decimal.Parse(linha1.Substring(221,18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture);
-            cet_contrato.valor_prestacao = Decimal.Parse(linha1.Substring(239, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture);
+            cet_contrato.valor_financiado = Decimal.Parse(linha1.Substring(221,18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture)/100.0;
+            cet_contrato.valor_prestacao = Decimal.Parse(linha1.Substring(239, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture)/100.0;
             
             if (linha2.Substring(0,1) == "2")
             {
@@ -81,13 +81,13 @@ namespace ImportadorArquivos.DB
         {
             var cet_parcela = new CetelemParcela();
             cet_parcela.contrato = linha.Substring(3,15);
-            cet_parcela.valor_original = Decimal.Parse(linha.Substring(21,18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture);
+            cet_parcela.valor_original = Decimal.Parse(linha.Substring(21,18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture)/100.0;
             cet_parcela.data_vencimento = linha.Substring(39, 8) == "00000000" ? DateTime.MinValue : DateTime.ParseExact(linha.Substring(39, 8), "ddMMyyyy", CultureInfo.InvariantCulture);
             cet_parcela.data_pagamento = linha.Substring(47, 8) == "00000000" ? DateTime.MinValue : DateTime.ParseExact(linha.Substring(47, 8), "ddMMyyyy", CultureInfo.InvariantCulture);
-            cet_parcela.valor_pagamento = Decimal.Parse(linha.Substring(55, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture);
+            cet_parcela.valor_pagamento = Decimal.Parse(linha.Substring(55, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture)/100.0;
             cet_parcela.processo = linha.Substring(82, 2);
             cet_parcela.data_ultimo_vencimento = linha.Substring(84, 8) == "00000000" ? DateTime.MinValue : DateTime.ParseExact(linha.Substring(84, 8), "ddMMyyyy", CultureInfo.InvariantCulture);
-            cet_parcela.valor_principal = Decimal.Parse(linha.Substring(92, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture);
+            cet_parcela.valor_principal = Decimal.Parse(linha.Substring(92, 18).Replace(",", "."), NumberStyles.Number, CultureInfo.InvariantCulture)/100.0;
             cet_parcela.codigo_parcela = int.Parse(linha.Substring(18, 3));
             return cet_parcela;
         }
