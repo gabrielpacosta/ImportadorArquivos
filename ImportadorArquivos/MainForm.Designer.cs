@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnImportarRec = new System.Windows.Forms.Button();
-            this.txbDirArquivoRec = new System.Windows.Forms.TextBox();
-            this.btnProcurarRec = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnImportarCA = new System.Windows.Forms.Button();
             this.txbDirArquivoCA = new System.Windows.Forms.TextBox();
             this.btnProcurarCA = new System.Windows.Forms.Button();
             this.dateTimePickerCA = new System.Windows.Forms.DateTimePicker();
             this.lblDataCA = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnImportarRec = new System.Windows.Forms.Button();
+            this.txbDirArquivoRec = new System.Windows.Forms.TextBox();
+            this.btnProcurarRec = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btImportarRejMis = new System.Windows.Forms.Button();
+            this.tbRejMis = new System.Windows.Forms.TextBox();
+            this.btProcurarRejMis = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnImportarCetelem = new System.Windows.Forms.Button();
             this.txbDirArquivoCetelem = new System.Windows.Forms.TextBox();
@@ -48,71 +52,26 @@
             this.openFileDialogRec = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogConn = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogCetelem = new System.Windows.Forms.OpenFileDialog();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btImportarRejMis = new System.Windows.Forms.Button();
-            this.tbRejMis = new System.Windows.Forms.TextBox();
-            this.btProcurarRejMis = new System.Windows.Forms.Button();
             this.openFileDialogRejMis = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl.Location = new System.Drawing.Point(0, 37);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(507, 339);
             this.tabControl.TabIndex = 7;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btnImportarRec);
-            this.tabPage1.Controls.Add(this.txbDirArquivoRec);
-            this.tabPage1.Controls.Add(this.btnProcurarRec);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(499, 313);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Rec_ass";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnImportarRec
-            // 
-            this.btnImportarRec.Location = new System.Drawing.Point(172, 162);
-            this.btnImportarRec.Name = "btnImportarRec";
-            this.btnImportarRec.Size = new System.Drawing.Size(75, 23);
-            this.btnImportarRec.TabIndex = 14;
-            this.btnImportarRec.Text = "Importar";
-            this.btnImportarRec.UseVisualStyleBackColor = true;
-            this.btnImportarRec.Click += new System.EventHandler(this.btnImportarRec_Click);
-            // 
-            // txbDirArquivoRec
-            // 
-            this.txbDirArquivoRec.Enabled = false;
-            this.txbDirArquivoRec.Location = new System.Drawing.Point(94, 84);
-            this.txbDirArquivoRec.Name = "txbDirArquivoRec";
-            this.txbDirArquivoRec.Size = new System.Drawing.Size(153, 20);
-            this.txbDirArquivoRec.TabIndex = 13;
-            // 
-            // btnProcurarRec
-            // 
-            this.btnProcurarRec.Location = new System.Drawing.Point(20, 83);
-            this.btnProcurarRec.Name = "btnProcurarRec";
-            this.btnProcurarRec.Size = new System.Drawing.Size(75, 22);
-            this.btnProcurarRec.TabIndex = 12;
-            this.btnProcurarRec.Text = "Procurar";
-            this.btnProcurarRec.UseVisualStyleBackColor = true;
-            this.btnProcurarRec.Click += new System.EventHandler(this.btnProcurarRec_Click);
             // 
             // tabPage2
             // 
@@ -124,9 +83,9 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(496, 313);
+            this.tabPage2.Size = new System.Drawing.Size(499, 313);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Carteira Atual";
+            this.tabPage2.Text = "Itaí - Carteira";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnImportarCA
@@ -144,7 +103,7 @@
             this.txbDirArquivoCA.Enabled = false;
             this.txbDirArquivoCA.Location = new System.Drawing.Point(94, 84);
             this.txbDirArquivoCA.Name = "txbDirArquivoCA";
-            this.txbDirArquivoCA.Size = new System.Drawing.Size(153, 20);
+            this.txbDirArquivoCA.Size = new System.Drawing.Size(397, 20);
             this.txbDirArquivoCA.TabIndex = 10;
             // 
             // btnProcurarCA
@@ -174,74 +133,46 @@
             this.lblDataCA.TabIndex = 7;
             this.lblDataCA.Text = "Data do arquivo:";
             // 
-            // tabPage3
+            // tabPage1
             // 
-            this.tabPage3.Controls.Add(this.btnImportarCetelem);
-            this.tabPage3.Controls.Add(this.txbDirArquivoCetelem);
-            this.tabPage3.Controls.Add(this.btnProcurarCetelem);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(496, 313);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Cetelem";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.btnImportarRec);
+            this.tabPage1.Controls.Add(this.txbDirArquivoRec);
+            this.tabPage1.Controls.Add(this.btnProcurarRec);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(499, 313);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Itaú - Rec_ass";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnImportarCetelem
+            // btnImportarRec
             // 
-            this.btnImportarCetelem.Location = new System.Drawing.Point(172, 162);
-            this.btnImportarCetelem.Name = "btnImportarCetelem";
-            this.btnImportarCetelem.Size = new System.Drawing.Size(75, 23);
-            this.btnImportarCetelem.TabIndex = 17;
-            this.btnImportarCetelem.Text = "Importar";
-            this.btnImportarCetelem.UseVisualStyleBackColor = true;
-            this.btnImportarCetelem.Click += new System.EventHandler(this.btnImportarCetelem_Click);
+            this.btnImportarRec.Location = new System.Drawing.Point(172, 162);
+            this.btnImportarRec.Name = "btnImportarRec";
+            this.btnImportarRec.Size = new System.Drawing.Size(75, 23);
+            this.btnImportarRec.TabIndex = 14;
+            this.btnImportarRec.Text = "Importar";
+            this.btnImportarRec.UseVisualStyleBackColor = true;
+            this.btnImportarRec.Click += new System.EventHandler(this.btnImportarRec_Click);
             // 
-            // txbDirArquivoCetelem
+            // txbDirArquivoRec
             // 
-            this.txbDirArquivoCetelem.Enabled = false;
-            this.txbDirArquivoCetelem.Location = new System.Drawing.Point(94, 84);
-            this.txbDirArquivoCetelem.Name = "txbDirArquivoCetelem";
-            this.txbDirArquivoCetelem.Size = new System.Drawing.Size(153, 20);
-            this.txbDirArquivoCetelem.TabIndex = 16;
+            this.txbDirArquivoRec.Enabled = false;
+            this.txbDirArquivoRec.Location = new System.Drawing.Point(94, 84);
+            this.txbDirArquivoRec.Name = "txbDirArquivoRec";
+            this.txbDirArquivoRec.Size = new System.Drawing.Size(153, 20);
+            this.txbDirArquivoRec.TabIndex = 13;
             // 
-            // btnProcurarCetelem
+            // btnProcurarRec
             // 
-            this.btnProcurarCetelem.Location = new System.Drawing.Point(20, 83);
-            this.btnProcurarCetelem.Name = "btnProcurarCetelem";
-            this.btnProcurarCetelem.Size = new System.Drawing.Size(75, 22);
-            this.btnProcurarCetelem.TabIndex = 15;
-            this.btnProcurarCetelem.Text = "Procurar";
-            this.btnProcurarCetelem.UseVisualStyleBackColor = true;
-            this.btnProcurarCetelem.Click += new System.EventHandler(this.btnProcurarCetelem_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(-3, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(250, 13);
-            this.lblTitulo.TabIndex = 8;
-            this.lblTitulo.Text = "Selecione a aba referente ao arquivo a ser inserido:";
-            // 
-            // openFileDialogCA
-            // 
-            this.openFileDialogCA.FileName = "Arquivo carteira atual";
-            this.openFileDialogCA.Filter = "Arquivo de Texto |*.txt";
-            // 
-            // openFileDialogRec
-            // 
-            this.openFileDialogRec.FileName = "Arquivo carteira atual";
-            this.openFileDialogRec.Filter = "Arquivo de Texto |*.txt";
-            // 
-            // openFileDialogConn
-            // 
-            this.openFileDialogConn.FileName = "Arquivo de conexão";
-            this.openFileDialogConn.Filter = "Arquivo de Texto |*.txt";
-            // 
-            // openFileDialogCetelem
-            // 
-            this.openFileDialogCetelem.FileName = "Arquivo Cetelem";
-            this.openFileDialogCetelem.Filter = "Arquivo de Texto |*.txt";
+            this.btnProcurarRec.Location = new System.Drawing.Point(20, 83);
+            this.btnProcurarRec.Name = "btnProcurarRec";
+            this.btnProcurarRec.Size = new System.Drawing.Size(75, 22);
+            this.btnProcurarRec.TabIndex = 12;
+            this.btnProcurarRec.Text = "Procurar";
+            this.btnProcurarRec.UseVisualStyleBackColor = true;
+            this.btnProcurarRec.Click += new System.EventHandler(this.btnProcurarRec_Click);
             // 
             // tabPage4
             // 
@@ -284,6 +215,75 @@
             this.btProcurarRejMis.UseVisualStyleBackColor = true;
             this.btProcurarRejMis.Click += new System.EventHandler(this.btProcurarRejMis_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnImportarCetelem);
+            this.tabPage3.Controls.Add(this.txbDirArquivoCetelem);
+            this.tabPage3.Controls.Add(this.btnProcurarCetelem);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(499, 313);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Cetelem - Carteira";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnImportarCetelem
+            // 
+            this.btnImportarCetelem.Location = new System.Drawing.Point(172, 162);
+            this.btnImportarCetelem.Name = "btnImportarCetelem";
+            this.btnImportarCetelem.Size = new System.Drawing.Size(75, 23);
+            this.btnImportarCetelem.TabIndex = 17;
+            this.btnImportarCetelem.Text = "Importar";
+            this.btnImportarCetelem.UseVisualStyleBackColor = true;
+            this.btnImportarCetelem.Click += new System.EventHandler(this.btnImportarCetelem_Click);
+            // 
+            // txbDirArquivoCetelem
+            // 
+            this.txbDirArquivoCetelem.Enabled = false;
+            this.txbDirArquivoCetelem.Location = new System.Drawing.Point(94, 84);
+            this.txbDirArquivoCetelem.Name = "txbDirArquivoCetelem";
+            this.txbDirArquivoCetelem.Size = new System.Drawing.Size(397, 20);
+            this.txbDirArquivoCetelem.TabIndex = 16;
+            // 
+            // btnProcurarCetelem
+            // 
+            this.btnProcurarCetelem.Location = new System.Drawing.Point(20, 83);
+            this.btnProcurarCetelem.Name = "btnProcurarCetelem";
+            this.btnProcurarCetelem.Size = new System.Drawing.Size(75, 22);
+            this.btnProcurarCetelem.TabIndex = 15;
+            this.btnProcurarCetelem.Text = "Procurar";
+            this.btnProcurarCetelem.UseVisualStyleBackColor = true;
+            this.btnProcurarCetelem.Click += new System.EventHandler(this.btnProcurarCetelem_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(-3, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(250, 13);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Selecione a aba referente ao arquivo a ser inserido:";
+            // 
+            // openFileDialogCA
+            // 
+            this.openFileDialogCA.FileName = "Arquivo carteira atual";
+            this.openFileDialogCA.Filter = "Arquivo de Texto |*.txt";
+            // 
+            // openFileDialogRec
+            // 
+            this.openFileDialogRec.FileName = "Arquivo carteira atual";
+            this.openFileDialogRec.Filter = "Arquivo de Texto |*.txt";
+            // 
+            // openFileDialogConn
+            // 
+            this.openFileDialogConn.FileName = "Arquivo de conexão";
+            this.openFileDialogConn.Filter = "Arquivo de Texto |*.txt";
+            // 
+            // openFileDialogCetelem
+            // 
+            this.openFileDialogCetelem.FileName = "Arquivo Cetelem";
+            this.openFileDialogCetelem.Filter = "Arquivo de Texto |*.txt";
+            // 
             // openFileDialogRejMis
             // 
             this.openFileDialogRejMis.FileName = "Arquivo carteira atual";
@@ -301,14 +301,14 @@
             this.Name = "Main";
             this.Text = "ImportadorArquivos";
             this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

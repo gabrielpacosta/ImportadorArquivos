@@ -13,7 +13,7 @@ namespace ImportadorArquivos.DB
         {
             for (int i = 0; i < AllLines.Length; i += 5000)
             {
-                StringBuilder query = new StringBuilder("INSERT INTO itau_rej_mis" +
+                StringBuilder query = new StringBuilder("INSERT INTO `Itau.RejMis`" +
                       " (`cpf`, `contrato`, `descricao_produto`, `parcela`," +
                       " `data_pagamento`, `uf_resid`, `valor_prestacao`," +
                       " `erro`, `atraso`, `nomeArquivo`)" + 
