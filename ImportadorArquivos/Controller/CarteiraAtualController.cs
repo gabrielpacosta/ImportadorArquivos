@@ -22,11 +22,14 @@ namespace ImportadorArquivos.Controller
                 MessageBox.Show("Arquivo vazio");
                 return;
             }
+
+            /*
             if (size > MAX_BYTES)
             {
                 MessageBox.Show("Arquivo muito grande");
                 return;
             }
+            */
 
             // Le o arquivo na memoria
             string[] AllLines = null;
